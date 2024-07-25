@@ -117,7 +117,7 @@ public class RadioTest {
     }
 
     @Test
-    public void decreaseVolume() {                            //убавить громкость
+    public void decreaseVolume() {                            //убавить громкость/
         Radio radio = new Radio();
         radio.setTheSoundVolume(5);
         radio.downVolume();
