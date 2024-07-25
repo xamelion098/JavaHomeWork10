@@ -24,7 +24,7 @@ public class Radio {
         radioStationNumber = newRadioStationNumber;
     }
 
-    public void setTheSoundVolume(int newSoundVolume) {
+    public void setSoundVolume(int newSoundVolume) {
         if (newSoundVolume >= 100) {
             newSoundVolume = 100;
         }

@@ -19,7 +19,7 @@ public class RadioTest {
 
 
     @Test
-    public void maxIcreaseRadioStationTest() {   //  Переход станции c 9 на 0 (MAX)
+    public void maxRadioStationTest() {   //  Переход станции c 9 на 0 (MAX)
         Radio radio = new Radio();
         radio.setRadioStationNumber(9);
         radio.increaseRadioStation();
@@ -85,7 +85,7 @@ public class RadioTest {
     public void shouldSetToMaxSoundVolume() {                  // Максимальная громкость
         Radio radio = new Radio();
 
-        radio.setTheSoundVolume(65);
+        radio.setSoundVolume(65);
 
         int expected = 65;
         int actual = radio.getSoundVolume();
@@ -95,7 +95,7 @@ public class RadioTest {
     @Test
     public void upVolumeMaxTest() {                            //прибавить громкость выше Max
         Radio radio = new Radio();
-        radio.setTheSoundVolume(111);
+        radio.setSoundVolume(111);
         radio.upVolume();
 
         int expected = 100;
@@ -107,7 +107,7 @@ public class RadioTest {
     @Test
     public void downVolumeMinTest() {                       //убавить громкость ниже Min
         Radio radio = new Radio();
-        radio.setTheSoundVolume(-1);
+        radio.setSoundVolume(-1);
         radio.downVolume();
 
         int expected = 0;
@@ -119,7 +119,7 @@ public class RadioTest {
     @Test
     public void decreaseVolume() {                            //убавить громкость/
         Radio radio = new Radio();
-        radio.setTheSoundVolume(5);
+        radio.setSoundVolume(5);
         radio.downVolume();
 
         int expected = 4;
@@ -131,7 +131,7 @@ public class RadioTest {
     @Test
     public void increaseVolume() {                              //прибавить громкость
         Radio radio = new Radio();
-        radio.setTheSoundVolume(5);
+        radio.setSoundVolume(5);
         radio.upVolume();
 
         int expected = 6;
