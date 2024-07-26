@@ -4,7 +4,17 @@ public class Radio {
 
     private int radioStationNumber;
     private int soundVolume;
+    private int numberRadioStation = 10;
+    private int minRadioStation = 0;
+    private int maxRadioStation = numberRadioStation - 1;
+    private int minVolume = 0;
+    private int maxVolume = 100;
+public Radio(int numberRadioStation ){
+    this.maxRadioStation = numberRadioStation -1;
+}
+public Radio(){
 
+}
     public int getRadioStationNumber() {
         return radioStationNumber;
     }
@@ -14,10 +24,10 @@ public class Radio {
     }
 
     public void setRadioStationNumber(int newRadioStationNumber) {
-        if (newRadioStationNumber > 9) {
+        if (newRadioStationNumber > maxRadioStation) {
             return;
         }
-        if (newRadioStationNumber < 0) {
+        if (newRadioStationNumber < minRadioStation) {
             return;
         }
 
@@ -25,40 +35,40 @@ public class Radio {
     }
 
     public void setSoundVolume(int newSoundVolume) {
-        if (newSoundVolume >= 100) {
-            newSoundVolume = 100;
+        if (newSoundVolume >= maxVolume) {
+            newSoundVolume = maxVolume;
         }
-        if (newSoundVolume < 0) {
-            newSoundVolume = 0;
+        if (newSoundVolume < minVolume) {
+            newSoundVolume = minVolume;
         }
         soundVolume = newSoundVolume;
     }
 
     public void increaseRadioStation() {
-        if (radioStationNumber < 9) {
-            radioStationNumber = +radioStationNumber + 1;
+        if (radioStationNumber < maxRadioStation) {
+            radioStationNumber = radioStationNumber + 1;
 
         } else {
-            radioStationNumber = 0;
+            radioStationNumber = minRadioStation;
         }
     }
 
     public void decreaseRadioStation() {
-        if (radioStationNumber > 0) {
+        if (radioStationNumber > minRadioStation) {
             radioStationNumber = radioStationNumber - 1;
         } else {
-            radioStationNumber = 9;
+            radioStationNumber = maxRadioStation;
         }
     }
 
     public void upVolume() {
-        if (soundVolume < 100) {
+        if (soundVolume < maxVolume) {
             soundVolume = soundVolume + 1;
         }
     }
 
     public void downVolume() {
-        if (soundVolume > 0) {
+        if (soundVolume > minVolume) {
             soundVolume = soundVolume - 1;
         }
     }
