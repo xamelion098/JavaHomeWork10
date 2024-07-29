@@ -9,12 +9,15 @@ public class Radio {
     private int maxRadioStation = numberRadioStation - 1;
     private int minVolume = 0;
     private int maxVolume = 100;
-public Radio(int numberRadioStation ){
-    this.maxRadioStation = numberRadioStation -1;
-}
-public Radio(){
 
-}
+    public Radio(int numberRadioStation) {
+        this.maxRadioStation = numberRadioStation - 1;
+    }
+
+    public Radio() {
+
+    }
+
     public int getRadioStationNumber() {
         return radioStationNumber;
     }

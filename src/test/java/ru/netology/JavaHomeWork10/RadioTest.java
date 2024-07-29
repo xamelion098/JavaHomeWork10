@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 
 public class RadioTest {
-    Radio radio = new Radio(10);
+    Radio radio = new Radio();
 
     @Test
     public void shouldSetToMaxRadioStationNumber() {                  // Максимальная станция
