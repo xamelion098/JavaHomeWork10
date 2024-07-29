@@ -5,13 +5,12 @@ import org.junit.jupiter.api.Test;
 
 
 public class RadioTest {
+    Radio radio = new Radio();
 
     @Test
     public void shouldSetToMaxRadioStationNumber() {                  // Максимальная станция
-        Radio radio = new Radio();
 
         radio.setRadioStationNumber(9);
-
         int expected = 9;
         int actual = radio.getRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -20,7 +19,7 @@ public class RadioTest {
 
     @Test
     public void maxRadioStationTest() {   //  Переход станции c 9 на 0 (MAX)
-        Radio radio = new Radio();
+
         radio.setRadioStationNumber(9);
         radio.increaseRadioStation();
         int expected = 0;
@@ -30,7 +29,7 @@ public class RadioTest {
 
     @Test
     public void minDecreaseRadioStationTest() {   // переход станции с 0 на 9 (MIN)
-        Radio radio = new Radio();
+
         radio.setRadioStationNumber(0);
         radio.decreaseRadioStation();
         int expected = 9;
@@ -39,8 +38,8 @@ public class RadioTest {
     }
 
     @Test
-    public void upRadioStationTest() {   //  Переключение выше станции если текущая <9 (+1)
-        Radio radio = new Radio();
+    public void upRadioStationTest() {   //  Переключение выше станции если текущая <10 (+1)
+
         radio.setRadioStationNumber(1);
         radio.increaseRadioStation();
         int expected = 2;
@@ -50,7 +49,7 @@ public class RadioTest {
 
     @Test
     public void downDecreaseRadioStationTest() {   // Переключение ниже станции если текущая > 0 (-1)
-        Radio radio = new Radio();
+
         radio.setRadioStationNumber(9);
         radio.decreaseRadioStation();
         int expected = 8;
@@ -59,22 +58,20 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNotSetRadioStationNumberAboveMax() {        // >10 станции
-        Radio radio = new Radio();
+    public void shouldNotSetRadioStationNumberAboveMax() {        // >9 станции
 
-        radio.setRadioStationNumber(11);
 
+        radio.setRadioStationNumber(10);
         int expected = 0;
         int actual = radio.getRadioStationNumber();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldNotSetRadioStationNumberAboveMin() {        // <10 станции
-        Radio radio = new Radio();
+    public void shouldNotSetRadioStationNumberAboveMin() {        // <9 станции
+
 
         radio.setRadioStationNumber(-1);
-
         int expected = 0;
         int actual = radio.getRadioStationNumber();
         Assertions.assertEquals(expected, actual);
@@ -86,7 +83,6 @@ public class RadioTest {
         Radio radio = new Radio();
 
         radio.setSoundVolume(65);
-
         int expected = 65;
         int actual = radio.getSoundVolume();
         Assertions.assertEquals(expected, actual);
@@ -97,7 +93,6 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setSoundVolume(111);
         radio.upVolume();
-
         int expected = 100;
         int actual = radio.getSoundVolume();
 
@@ -109,7 +104,6 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setSoundVolume(-1);
         radio.downVolume();
-
         int expected = 0;
         int actual = radio.getSoundVolume();
 
@@ -121,7 +115,6 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setSoundVolume(5);
         radio.downVolume();
-
         int expected = 4;
         int actual = radio.getSoundVolume();
 
@@ -133,7 +126,6 @@ public class RadioTest {
         Radio radio = new Radio();
         radio.setSoundVolume(5);
         radio.upVolume();
-
         int expected = 6;
         int actual = radio.getSoundVolume();
 
